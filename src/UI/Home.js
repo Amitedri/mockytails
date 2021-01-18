@@ -7,6 +7,42 @@ to{
     opacity:1;
 }
 `
+
+  const heartbeat = keyframes`
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    10% {
+      -webkit-transform: scale(0.91);
+              transform: scale(0.91);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    17% {
+      -webkit-transform: scale(0.98);
+              transform: scale(0.98);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    33% {
+      -webkit-transform: scale(0.87);
+              transform: scale(0.87);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    45% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  `
+  
 const MainWrapper = styled.div`
 height:100vh;
 width:100vw;
@@ -64,7 +100,8 @@ background-color:white;
 z-index:999;
 align-self:center;
 position: relative;
-top:5%
+top:5%;
+animation: ${heartbeat} 1s ease;
 `
 
 
@@ -80,6 +117,7 @@ left:15%;
 display:flex;
 flex-direction:column;
 animation: ${Fade} 1s ease;
+overflow:auto;
 
 `
 const ResLine = styled.div`
@@ -176,6 +214,7 @@ const FieldValue = styled.div`
 height:100%;
 width:15%;
 align-self:center;
+overflow:hidden;
 `
 
 export { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow, ResLine, SetInputs, SearchInput, InputWrapper, InputDescription, Span, FieldName, FieldsWrapper, FieldValue };

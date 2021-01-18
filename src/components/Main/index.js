@@ -20,7 +20,7 @@ const Main = () => {
     }
     const [showSet, setShowSet] = React.useState(false);
 
-    const { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow, ResLine, SetInputs, SearchInput, InputWrapper, InputDescription, Span, FieldName, FieldsWrapper,FieldValue } = components;
+    const { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow, ResLine, SetInputs, SearchInput, InputWrapper, InputDescription, Span, FieldName, FieldsWrapper, FieldValue } = components;
     const mapResults = (list) => {
         if (list.length > 1) {
             return list.map((item) => {
@@ -32,7 +32,7 @@ const Main = () => {
     const setInputs = () => {
         return (
             <SetInputs>
-                <InputWrapper><InputDescription><Span>Name</Span></InputDescription><SearchInput placeholder='Type Name...' onInput={(event) => getDataFromApi(event.target.value)} /></InputWrapper>
+                <InputWrapper ><InputDescription><Span>Name</Span></InputDescription><SearchInput placeholder='Type Name...' onInput={(event) => getDataFromApi(event.target.value)} /></InputWrapper>
                 <InputWrapper><InputDescription><Span>Ingredients</Span></InputDescription><SearchInput placeholder='Ingreients...' /></InputWrapper>
                 <InputWrapper><InputDescription><Span>Alcoholic</Span></InputDescription><SearchInput placeholder='Is Alcohlic? ' /></InputWrapper>
                 <InputWrapper><InputDescription><Span>Favourite Alcohol</Span></InputDescription><SearchInput placeholder='favourite...' /></InputWrapper>
