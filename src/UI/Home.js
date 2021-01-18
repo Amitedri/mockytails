@@ -64,8 +64,10 @@ top:5%
 const ResultWindow = styled.div`
 height:50%;
 width:70%;
-background-color:white;
-position:absolute;
+background: linear-gradient(262.86deg, #000000 5.09%, rgba(44, 189, 252, 0.79) 102.69%);
+border: 5px solid #FFFFFF;
+box-sizing: border-box;
+border-radius: 8px;position:absolute;
 bottom:5%;
 left:15%;
 
@@ -76,6 +78,12 @@ width:100%;
 background-color:blue;
 display:flex;
 flex-direction:row;
+background-color:#fefefe;
+border-bottom:1px solid #111111;
+:first-child{
+margin-top:0.5%;
+
+}
 `
 const SetInputs = styled.div`
 height:5%;
@@ -119,8 +127,7 @@ height:80%;
 width:50%;
 align-self:center;
 background-color:white;
-/* border-top-left-radius:5px;
-border-bottom-left-radius:5px; */
+
 ::placeholder{
     color:lightgray;
 }
