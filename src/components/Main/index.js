@@ -20,7 +20,7 @@ const Main = () => {
     }
     const [showSet, setShowSet] = React.useState(false);
 
-    const { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow, ResLine, SetInputs, SearchInput, InputWrapper, InputDescription, Span } = components;
+    const { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow, ResLine, SetInputs, SearchInput, InputWrapper, InputDescription, Span, FieldName, FieldsWrapper } = components;
     const mapResults = (list) => {
         if (list.length > 1) {
             return list.map((item) => {
@@ -28,7 +28,7 @@ const Main = () => {
             })
         }
     }
-    
+
     const setInputs = () => {
         return (
             <SetInputs>
@@ -49,7 +49,17 @@ const Main = () => {
             <H2>SHAKE YOUR COCKTAILS AT ANY PLACE</H2>
             <ActionButton>EXPLORE</ActionButton>
         </Header>
-        {showResult ? <ResultWindow>{mapResults(resultFromApi)}</ResultWindow> : null}
+        {showResult ? <ResultWindow>
+            <FieldsWrapper>
+                <FieldName>Name</FieldName>
+                <FieldName>Alcoholic</FieldName>
+                <FieldName>Ingredients</FieldName>
+                <FieldName>Glass</FieldName>
+                <FieldName>Category</FieldName>
+            </FieldsWrapper>
+
+            {/* {mapResults(resultFromApi)} */}
+        </ResultWindow> : null}
     </MainWrapper>;
 }
 

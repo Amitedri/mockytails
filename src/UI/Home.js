@@ -70,6 +70,8 @@ box-sizing: border-box;
 border-radius: 8px;position:absolute;
 bottom:5%;
 left:15%;
+display:flex;
+flex-direction:column;
 
 `
 const ResLine = styled.div`
@@ -78,8 +80,10 @@ width:100%;
 background-color:blue;
 display:flex;
 flex-direction:row;
-background-color:#fefefe;
+background: linear-gradient(269.93deg, #E2E2E2 3.62%, rgba(119, 247, 255, 0.66) 99.12%);
 border-bottom:1px solid #111111;
+color:white;
+font-weight:500;
 :first-child{
 margin-top:0.5%;
 
@@ -136,4 +140,24 @@ background-color:white;
 const Span = styled.span`
 align-self:center;
 `
-export { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow,ResLine,SetInputs,SearchInput,InputWrapper,InputDescription,Span };
+
+const FieldName = styled.div`
+height:5%;
+width:15%;
+text-decoration:underline;
+`
+const FieldsWrapper = styled.div`
+height:5%;
+width:80%;
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-self:flex-start;
+margin-left:10%;
+background: linear-gradient(269.93deg, #E2E2E2 3.62%, rgba(119, 247, 255, 0.66) 99.12%);
+border-radius:15px;
+font-weight:500;
+
+`
+
+export { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow,ResLine,SetInputs,SearchInput,InputWrapper,InputDescription,Span,FieldName,FieldsWrapper };
