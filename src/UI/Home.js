@@ -68,7 +68,9 @@ z-index:999;
 margin-top:8%;
 margin-left:5%;
 text-align:center;
-
+@media (max-width: 993px) {
+    width:25%
+  }
 `
 
 const H1 = styled.img`
@@ -90,6 +92,23 @@ font-weight:500;
 border:2px solid white;
 border-radius:5px;
 margin-left:3%;
+@media (max-width: 1400px) {
+    width:35%;
+    font-size:1em;
+  }
+@media (max-width: 993px) {
+    width:35%;
+    font-size:1em;
+  }
+  @media (max-width: 570px) {
+    width:55%;
+    font-size:1em;
+  }
+  @media (max-width: 360px) {
+          height:25%;
+    width:60%;
+    font-size:0.5em;
+  }
 `
 const SearchButton = styled(ActionButton)`
 text-align:center;
