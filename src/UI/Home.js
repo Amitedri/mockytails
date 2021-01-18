@@ -1,5 +1,12 @@
 import styled, { keyframes } from 'styled-components';
-
+const Fade = keyframes`
+from{
+    opacity:0;
+}
+to{
+    opacity:1;
+}
+`
 const MainWrapper = styled.div`
 height:100vh;
 width:100vw;
@@ -72,23 +79,27 @@ bottom:5%;
 left:15%;
 display:flex;
 flex-direction:column;
+animation: ${Fade} 1s ease;
 
 `
 const ResLine = styled.div`
 height:5%;
-width:100%;
+width:80%;
 background-color:blue;
 display:flex;
 flex-direction:row;
+justify-content:center;
 background: linear-gradient(269.93deg, #E2E2E2 3.62%, rgba(119, 247, 255, 0.66) 99.12%);
 border-bottom:1px solid #111111;
 color:white;
 font-weight:500;
-:first-child{
+align-self:center;
+:nth-child(2){
 margin-top:0.5%;
-
 }
 `
+
+
 const SetInputs = styled.div`
 height:5%;
 width:80%;
@@ -102,6 +113,7 @@ flex-direction:row;
 border-radius:15px;
 overflow:hidden;
 justify-content:space-around;
+animation: ${Fade} 1s ease;
 
 `
 const InputWrapper = styled.div`
@@ -160,4 +172,10 @@ font-weight:500;
 
 `
 
-export { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow,ResLine,SetInputs,SearchInput,InputWrapper,InputDescription,Span,FieldName,FieldsWrapper };
+const FieldValue = styled.div`
+height:100%;
+width:15%;
+align-self:center;
+`
+
+export { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow, ResLine, SetInputs, SearchInput, InputWrapper, InputDescription, Span, FieldName, FieldsWrapper, FieldValue };

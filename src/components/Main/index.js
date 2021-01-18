@@ -20,11 +20,11 @@ const Main = () => {
     }
     const [showSet, setShowSet] = React.useState(false);
 
-    const { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow, ResLine, SetInputs, SearchInput, InputWrapper, InputDescription, Span, FieldName, FieldsWrapper } = components;
+    const { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow, ResLine, SetInputs, SearchInput, InputWrapper, InputDescription, Span, FieldName, FieldsWrapper,FieldValue } = components;
     const mapResults = (list) => {
         if (list.length > 1) {
             return list.map((item) => {
-                return <ResLine><div>{item.strDrink}</div><div>{item.strAlcoholic}</div></ResLine>
+                return <ResLine><FieldValue>{item.strDrink}</FieldValue><FieldValue>{item.strAlcoholic === 'Alcoholic' ? 'Yes' : 'No'}</FieldValue><FieldValue>{item.strIngredient}</FieldValue><FieldValue>{item.strGlass}</FieldValue><FieldValue>{item.strCategory}</FieldValue></ResLine>
             })
         }
     }
@@ -58,7 +58,7 @@ const Main = () => {
                 <FieldName>Category</FieldName>
             </FieldsWrapper>
 
-            {/* {mapResults(resultFromApi)} */}
+            {mapResults(resultFromApi)}
         </ResultWindow> : null}
     </MainWrapper>;
 }
