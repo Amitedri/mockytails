@@ -1,10 +1,12 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
 const MainWrapper = styled.div`
 height:100vh;
 width:100vw;
 display:flex;
 flex-direction:column;
 position:relative;
+transition: all 1s ease;
 `
 const Image = styled.img`
 height:100%;
@@ -57,4 +59,74 @@ align-self:center;
 position: relative;
 top:5%
 `
-export { MainWrapper, Header, H1, H2, Image, ActionButton,SearchButton }
+
+
+const ResultWindow = styled.div`
+height:50%;
+width:70%;
+background-color:white;
+position:absolute;
+bottom:5%;
+left:15%;
+
+`
+const ResLine = styled.div`
+height:5%;
+width:100%;
+background-color:blue;
+display:flex;
+flex-direction:row;
+`
+const SetInputs = styled.div`
+height:5%;
+width:80%;
+position:absolute;
+background-color:purple;
+top:12%;
+left:15%;
+z-index:999;
+display:flex;
+flex-direction:row;
+border-radius:15px;
+overflow:hidden;
+justify-content:space-around;
+
+`
+const InputWrapper = styled.div`
+height:100%;
+width:15%;
+display:flex;
+flex-direction:row;
+align-self:center;
+text-align:center;
+font-size:1em;
+border-radius:15px;
+overflow:hidden;
+
+`
+const InputDescription = styled.div`
+height:80%;
+width:50%;
+align-self:center;
+background-color:#111111;
+color:white;
+display:flex;
+justify-content:center;
+`
+const SearchInput = styled.input`
+all:unset;
+height:80%;
+width:50%;
+align-self:center;
+background-color:white;
+/* border-top-left-radius:5px;
+border-bottom-left-radius:5px; */
+::placeholder{
+    color:lightgray;
+}
+
+`
+const Span = styled.span`
+align-self:center;
+`
+export { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow,ResLine,SetInputs,SearchInput,InputWrapper,InputDescription,Span };
