@@ -9,6 +9,17 @@ const Main = () => {
     const [resultFromApi, setResultFromApi] = React.useState([]);
 
     const getDataFromApi = async (keyword) => {
+        const determinLink = (link)=>{
+            switch (link) {
+                case 'name':
+                    return `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${keyword}`;
+                    break;
+                
+                default:return link;
+                    break;
+            }
+        }
+        console.log(determinLink('name'))
         const res = await axios({
             method: 'get',
             url: `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${keyword}`
