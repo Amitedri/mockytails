@@ -58,11 +58,11 @@ const Main = () => {
         <SearchButton onClick={() => setShowSearchBar((prevState) => !prevState)}>Search Alcohol</SearchButton>
         {showSearchBar ? setInputs() : null}
         <Image src={backy} />
-        <Header>
+        {!showSearchBar ? <Header>
             <H1 src={h1} />
             <H2>SHAKE YOUR COCKTAILS AT ANY PLACE</H2>
             <ActionButton onClick={() => setShowSearchBar((prevState) => !prevState)}>EXPLORE</ActionButton>
-        </Header>
+        </Header>:null}
         {showResult ? <ResultWindow>
             <FieldsWrapper>
                 <FieldName>Name</FieldName>

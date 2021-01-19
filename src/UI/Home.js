@@ -8,7 +8,7 @@ to{
 }
 `
 
-  const heartbeat = keyframes`
+const heartbeat = keyframes`
     from {
       -webkit-transform: scale(1);
               transform: scale(1);
@@ -42,7 +42,7 @@ to{
               animation-timing-function: ease-out;
     }
   `
-  
+
 const MainWrapper = styled.div`
 height:100vh;
 width:100vw;
@@ -69,7 +69,11 @@ margin-top:8%;
 margin-left:5%;
 text-align:center;
 @media (max-width: 993px) {
-    width:25%
+    width:25%;
+    margin-top:15%;
+  }
+  @media (max-width: 500px) {
+    margin-top:25%;
   }
 `
 
@@ -92,6 +96,7 @@ font-weight:500;
 border:2px solid white;
 border-radius:5px;
 margin-left:3%;
+
 @media (max-width: 1400px) {
     width:35%;
     font-size:1em;
@@ -104,9 +109,9 @@ margin-left:3%;
     width:55%;
     font-size:1em;
   }
-  @media (max-width: 360px) {
-          height:25%;
-    width:60%;
+  @media (max-width: 500px) {
+    width:20vw;  
+    height:10vh;
     font-size:0.5em;
   }
 `
@@ -121,6 +126,11 @@ align-self:center;
 position: relative;
 top:5%;
 animation: ${heartbeat} 1s ease;
+@media (max-width: 500px) {
+    width:25%;
+    font-size:0.5em;
+    font-size:1em;
+  }
 `
 
 
@@ -137,7 +147,11 @@ display:flex;
 flex-direction:column;
 animation: ${Fade} 1s ease;
 overflow:auto;
+@media (max-width: 500px) {
+    width:100%;
+    left:0;
 
+  }
 `
 const ResLine = styled.div`
 height:5%;
@@ -153,7 +167,13 @@ font-weight:500;
 align-self:center;
 :nth-child(2){
 margin-top:0.5%;
+
 }
+@media (max-width: 500px) {
+    width:100%;
+    left:0;
+    font-size:12px;
+  }
 `
 
 
@@ -171,6 +191,22 @@ border-radius:15px;
 overflow:hidden;
 justify-content:space-around;
 animation: ${Fade} 1s ease;
+@media (max-width: 1400px) {
+    font-size:1em;
+  }
+@media (max-width: 993px) {
+  font-size:0.8em;
+
+  }
+  @media (max-width: 570px) {
+    font-size:1em;
+
+  }
+  @media (max-width: 500px) {
+    width:100%;
+    font-size:1em;
+    left:0;
+  }
 
 `
 const InputWrapper = styled.div`
@@ -193,6 +229,12 @@ background-color:#111111;
 color:white;
 display:flex;
 justify-content:center;
+
+@media (max-width: 993px) {
+ display:none;
+
+  }
+
 `
 const SearchInput = styled.input`
 all:unset;
@@ -200,7 +242,14 @@ height:80%;
 width:50%;
 align-self:center;
 background-color:white;
+@media (max-width: 993px) {
+ width:100%
 
+  }
+  @media (max-width: 500px) {
+    font-size:0.8em;
+
+  }
 ::placeholder{
     color:lightgray;
 }
@@ -217,7 +266,7 @@ text-decoration:underline;
 `
 const FieldsWrapper = styled.div`
 height:5%;
-width:80%;
+width:100%;
 display:flex;
 flex-direction:row;
 justify-content:center;
@@ -226,7 +275,11 @@ margin-left:10%;
 background: linear-gradient(269.93deg, #E2E2E2 3.62%, rgba(119, 247, 255, 0.66) 99.12%);
 border-radius:15px;
 font-weight:500;
-
+@media (max-width: 500px) {
+    font-size:0.8em;
+    margin-left:0;
+    justify-content:space-between;
+  }
 `
 
 const FieldValue = styled.div`
@@ -234,6 +287,10 @@ height:100%;
 width:15%;
 align-self:center;
 overflow:hidden;
+@media (max-width: 500px) {
+    align-self:flex-start;
+    
+  }
 `
 
 export { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow, ResLine, SetInputs, SearchInput, InputWrapper, InputDescription, Span, FieldName, FieldsWrapper, FieldValue };
