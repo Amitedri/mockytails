@@ -9,6 +9,7 @@ const Main = () => {
     const [resultFromApi, setResultFromApi] = React.useState([]);
 
     const getDataFromApi = async (keyword, linkType) => {
+        
         const determinLink = () => {
             switch (linkType) {
                 case 'name':
@@ -34,11 +35,14 @@ const Main = () => {
     }
     const [showSearchBar, setShowSearchBar] = React.useState(false);
 
+
     const { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow, ResLine, SetInputs, SearchInput, InputWrapper, InputDescription, Span, FieldName, FieldsWrapper, FieldValue } = components;
+
+
     const mapResults = (list) => {
         if (list.length > 1) {
-            return list.map((item) => {
-                return <ResLine><FieldValue>{item.strDrink}</FieldValue><FieldValue>{item.strAlcoholic === 'Alcoholic' ? 'Yes' : 'No'}</FieldValue><FieldValue>{item.strIngredient}</FieldValue><FieldValue>{item.strGlass}</FieldValue><FieldValue>{item.strCategory}</FieldValue></ResLine>
+            return list.map((item,index) => {
+                return <ResLine key={index}><FieldValue>{item.strDrink}</FieldValue><FieldValue>{item.strAlcoholic === 'Alcoholic' ? 'Yes' : 'No'}</FieldValue><FieldValue>{item.strIngredient}</FieldValue><FieldValue>{item.strGlass}</FieldValue><FieldValue>{item.strCategory}</FieldValue></ResLine>
             })
         }
     }
@@ -54,10 +58,12 @@ const Main = () => {
             </SetInputs>
         )
     }
+
     const handleShowElements = ()=>{
         setShowSearchBar((prevState) => !prevState)
         setShowResult((prevState) => !prevState)
     }
+
     return <MainWrapper>
         <SearchButton onClick={() => handleShowElements() }>Search Alcohol</SearchButton>
         {showSearchBar ? setInputs() : null}
