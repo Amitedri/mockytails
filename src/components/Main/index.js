@@ -15,11 +15,8 @@ const Main = () => {
                 case 'name':
                     return `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${keyword}`;
                 case 'alcoholic': return `https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=${keyword}`
-                    break;
                 case 'glass': return `https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${keyword}`
-                    break;
                 case 'ingredients': return `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${keyword}`
-                    break;
                 case 'category': return `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${keyword}`
                 default: return linkType;
             }
