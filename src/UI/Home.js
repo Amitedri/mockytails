@@ -73,7 +73,7 @@ text-align:center;
     margin-top:15%;
   }
   @media (max-width: 500px) {
-    margin-top:25%;
+    width:50%;
   }
 `
 
