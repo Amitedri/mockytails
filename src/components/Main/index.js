@@ -7,9 +7,10 @@ import * as components from '../../UI/Home';
 const Main = () => {
     const [showResult, setShowResult] = React.useState(false);
     const [resultFromApi, setResultFromApi] = React.useState([]);
-
+    const [showSearchBar, setShowSearchBar] = React.useState(false);
+    //Handles request on Input event
     const getDataFromApi = async (keyword, linkType) => {
-        
+        //changing endpoint for different search terms
         const determinLink = () => {
             switch (linkType) {
                 case 'name':
@@ -21,29 +22,44 @@ const Main = () => {
                 default: return linkType;
             }
         }
+        //make request
         const link = determinLink(linkType)
         console.log(link)
         const res = await axios({
             method: 'get',
             url: link
         });
+        //initate error handler
+        if (res.status !== 200) {
+            showError();
+        }
+        //if there is data coming back this will set UI
+
+        //show results container
         res.data?.drinks ? setShowResult(true) : setShowResult(false);
+        //set data to state
         res.data?.drinks ? setResultFromApi(res.data.drinks) : setResultFromApi([]);
     }
-    const [showSearchBar, setShowSearchBar] = React.useState(false);
 
 
+    //styled components
     const { MainWrapper, Header, H1, H2, Image, ActionButton, SearchButton, ResultWindow, ResLine, SetInputs, SearchInput, InputWrapper, InputDescription, Span, FieldName, FieldsWrapper, FieldValue } = components;
 
-
+    //map results from API
     const mapResults = (list) => {
         if (list.length > 1) {
-            return list.map((item,index) => {
+            return list.map((item, index) => {
                 return <ResLine key={index}><FieldValue>{item.strDrink}</FieldValue><FieldValue>{item.strAlcoholic === 'Alcoholic' ? 'Yes' : 'No'}</FieldValue><FieldValue>{item.strIngredient}</FieldValue><FieldValue>{item.strGlass}</FieldValue><FieldValue>{item.strCategory}</FieldValue></ResLine>
             })
         }
     }
-
+    //error handler
+    const showError = () => {
+        return (
+            <div className='error'>Something went wrong please refresh the page or try again later. </div>
+        )
+    }
+    //input list on nav
     const setInputs = () => {
         return (
             <SetInputs>
@@ -55,14 +71,14 @@ const Main = () => {
             </SetInputs>
         )
     }
-
-    const handleShowElements = ()=>{
+    //hide headers and show results bar
+    const handleShowElements = () => {
         setShowSearchBar((prevState) => !prevState)
         setShowResult((prevState) => !prevState)
     }
 
     return <MainWrapper>
-        <SearchButton onClick={() => handleShowElements() }>Search Alcohol</SearchButton>
+        <SearchButton onClick={() => handleShowElements()}>Search Alcohol</SearchButton>
         {showSearchBar ? setInputs() : null}
         <Image src={backy} />
         {showSearchBar ? null : <Header>
