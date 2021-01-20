@@ -50,6 +50,7 @@ display:flex;
 flex-direction:column;
 position:relative;
 transition: all 1s ease;
+
 `
 const Image = styled.img`
 height:100%;
@@ -57,7 +58,13 @@ width:100%;
 position:absolute;
 top:0;
 left:0;
-
+@media (max-width: 500px) {
+  height:100%;
+width:100%;
+    background-size:100%;
+    background-position:center;
+    background-repeat:no-repeat;
+  }
 `
 const Header = styled.div`
 height:35%;
@@ -151,6 +158,7 @@ animation: ${Fade} 1s ease;
 
 @media (max-width: 500px) {
     width:100%;
+    height:60%;
     left:0;
 
   }
@@ -170,6 +178,7 @@ align-self:center;
 
 @media (max-width: 500px) {
     width:100%;
+    justify-content:space-between;
     left:0;
     font-size:12px;
   }
