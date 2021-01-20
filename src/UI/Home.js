@@ -135,7 +135,7 @@ animation: ${heartbeat} 1s ease;
 
 
 const ResultWindow = styled.div`
-height:50%;
+min-height:50%;
 width:70%;
 background: linear-gradient(262.86deg, #000000 5.09%, rgba(44, 189, 252, 0.79) 102.69%);
 border: 5px solid #FFFFFF;
@@ -145,8 +145,10 @@ bottom:5%;
 left:15%;
 display:flex;
 flex-direction:column;
+justify-content:center;
 animation: ${Fade} 1s ease;
-overflow:auto;
+/* overflow:auto; */
+
 @media (max-width: 500px) {
     width:100%;
     left:0;
@@ -155,7 +157,7 @@ overflow:auto;
 `
 const ResLine = styled.div`
 height:5%;
-width:80%;
+width:100%;
 background-color:blue;
 display:flex;
 flex-direction:row;
@@ -165,10 +167,7 @@ border-bottom:1px solid #111111;
 color:white;
 font-weight:500;
 align-self:center;
-:nth-child(2){
-margin-top:0.5%;
 
-}
 @media (max-width: 500px) {
     width:100%;
     left:0;
@@ -186,6 +185,7 @@ top:12%;
 left:15%;
 z-index:999;
 display:flex;
+justify-content:center;
 flex-direction:row;
 border-radius:15px;
 overflow:hidden;
@@ -263,6 +263,7 @@ const FieldName = styled.div`
 height:5%;
 width:15%;
 text-decoration:underline;
+
 `
 const FieldsWrapper = styled.div`
 height:5%;
@@ -271,7 +272,6 @@ display:flex;
 flex-direction:row;
 justify-content:center;
 align-self:flex-start;
-margin-left:10%;
 background: linear-gradient(269.93deg, #E2E2E2 3.62%, rgba(119, 247, 255, 0.66) 99.12%);
 border-radius:15px;
 font-weight:500;
